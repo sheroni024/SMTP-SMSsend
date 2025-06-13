@@ -1,0 +1,21 @@
+﻿@model SMS
+
+<h2>Send SMS</h2>
+
+<form asp-action="Send" method="post">
+    <div>
+        <label>To Phone Number:</label>
+        <input asp-for="ToPhone" />
+    </div>
+    <div>
+        <label>Message:</label>
+        <textarea asp-for="Message"></textarea>
+    </div>
+    <button type="submit">Send SMS</button>
+</form>
+
+@if (ViewBag.Status != null)
+{
+    <p>@ViewBag.Status</p>
+    <p>Message SID: @ViewBag.MessageSid</p>
+}
